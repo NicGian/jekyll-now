@@ -394,14 +394,13 @@ sentence1=['where can i find a book on machine learning']
 sentence2=['how can i become a successful entrepreneur']
 
 Generated sentences:
-- ------------------------------------------- -
 -  where can i find a book on machine learning
 -  where can i find a a machine book
 -  how can i write a a machine book
 -  how can i become a successful architect
 -  how can i become a successful architect
 -  how can i become a successful entrepreneur
-- ------------------------------------------- -
+
 
 As we can see the results are not yet completely satisfying because not all the sentences are grammatically correct and in the interpolation the same sentence has been generated multiple times but anyway the model, even in this preliminary version seems to start working.
 There are certainly many improvements that could be done like:
