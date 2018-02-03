@@ -24,6 +24,7 @@ The model that we are going to implement is based on a Seq2Seq architecture with
 #### Useful links
 - [Generating sentences from a continuous space](https://arxiv.org/abs/1511.06349)
 - [Vae intuitive explanation](https://hsaghir.github.io/data_science/denoising-vs-variational-autoencoder/)
+- [The variational auto-encoder - Stanford CS228 notes](https://ermongroup.github.io/cs228-notes/extras/vae/)
 
 
 
@@ -151,7 +152,7 @@ max_len = MAX_SEQUENCE_LENGTH
 emb_dim = EMBEDDING_DIM
 latent_dim = 32
 intermediate_dim = 96
-epsilon_std = 0.01
+epsilon_std = 1.0
 num_sampled=500
 act = ELU()
 
@@ -405,9 +406,10 @@ Generated sentences:
 As we can see the results are not yet completely satisfying because not all the sentences are grammatically correct and in the interpolation the same sentence has been generated multiple times but anyway the model, even in this preliminary version seems to start working.
 There are certainly many improvements that could be done like:
 -  removing all the sentences longer than 15 instead of just truncating them
+-  introduce KL term annealing
 -  introduce the equivalent of word dropout used in the original paper for this decoder architecture 
 -  parameter tuning (this model trains in few hours on a GTX950M with 2GB memory so it's definitely possible to try larger nets)
--  Using word embeddings with higher dimensionality
+-  using word embeddings with higher dimensionality
 -  train on a more general dataset (Quora sentences are all questions)
 
 Stay tuned for future refinings of the model!
